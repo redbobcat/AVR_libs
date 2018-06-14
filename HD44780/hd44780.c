@@ -4,9 +4,16 @@ Author :   SA Development
 Version:   1.11
 *****************************************************************************/
 
-#include <avr/pgmspace.h>
 #include "hd44780.h"
+
 #include <avr/sfr_defs.h>
+
+#if PROGMEM_FUNCTIONS==1
+  #include <avr/pgmspace.h>
+#else
+  #include <avr/io.h>
+#endif
+
 #if (USE_ADELAY_LIBRARY==1)
   #include "adelay.h"
 #else
@@ -547,6 +554,7 @@ Display string from flash
 Input:    string to be displayed
 Returns:  none
 *************************************************************************/
+#if PROGMEM_FUNCTIONS==1
 void lcd_puts_P(const char *progmem_s)
   {
     register char c;
@@ -554,7 +562,7 @@ void lcd_puts_P(const char *progmem_s)
     while ((c=pgm_read_byte(progmem_s++))) 
       lcd_putc(c);
   }
-
+#endif
 /*************************************************************************
 Initialize display
 Input:    none

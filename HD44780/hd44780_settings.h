@@ -10,6 +10,8 @@
                                              // 1=Use Check Busy Flag (Faster if running >10Mhz) ***Requires RW Line***
 #define DELAY_RESET              15          // in mS
 
+#define PROGMEM_FUNCTIONS        0           //Enable PROGMEM function, -30 bytes for code if disabled
+
 #if (LCD_BITS==8)                            // If using 8 bit mode, you must configure DB0-DB7
   #define LCD_DB0_PORT           PORTC
   #define LCD_DB0_PIN            0
