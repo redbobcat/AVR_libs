@@ -1,25 +1,25 @@
 /*
  * spi.h
  * MASTER only for now
- *
- * Copyright 2018 username <redbobcat@github.com>
- *
+ * 
+ * Copyright 2018 username <username@zvorikin>
+ * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
- *
+ * 
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- *
+ * 
  * You should have received a copy of the GNU General Public License
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
- *
- *
+ * 
+ * 
  */
 
 #ifndef _SPI_H
@@ -44,7 +44,7 @@
  * 0b11 F_CPU/128
  * SPI2X doubles SPI speed
  */
-
+ 
 
 //define for ports and pins
 //all on B port in megas
@@ -55,14 +55,14 @@
 
 //this for diferent megas
 #if defined(__AVR_ATmega8__) || defined(__AVR_ATmega48__) || defined(__AVR_ATmega88__) || \
-    defined(__AVR_ATmega16__) || defined(__AVR_ATmega32__) || defined(__AVR_ATmega162__) || defined(__AVR_ATmega168__)
+    defined(__AVR_ATmega16__) || defined(__AVR_ATmega32__) || defined(__AVR_ATmega162__) || defined(__AVR_ATmega168__) 
 
 #define SPI_SCK		7
 #define SPI_MOSI	5
 #define SPI_MISO	6
 //#define SPI_CS		4 //chip select must be implemented in other functions
 
-#elif defined(__AVR_ATmega64__)  || defined(__AVR_ATmega128__)
+#elif defined(__AVR_ATmega64__)  || defined(__AVR_ATmega128__) 
 
 #define SPI_SCK		1
 #define SPI_MOSI	2
